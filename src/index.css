@@ -1,0 +1,159 @@
+:root {
+  --bg: #1e1e2f;
+  --primary: #2d2d44;
+  --accent: #ff79c6;
+  --btn-bg: #44475a;
+  --btn-hover: #6272a4;
+  --btn-shadow: #282a36;
+  --highlight: #ff79c6;
+}
+
+.theme2 {
+  --bg: #121212;
+  --primary: #1e1e1e;
+  --accent: #0ff;
+  --btn-bg: #2a2a2a;
+  --btn-hover: #3a3a3a;
+  --btn-shadow: #111;
+  --highlight: #0ff;
+}
+
+.theme2 .theme-btn {
+  background-color: #0ff;
+  color: #000;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.theme3 {
+  --bg: #ececec;
+  --primary: #ffffff;
+  --accent: #202124;
+  --btn-bg: #dee1e6;
+  --btn-hover: #cfd2d7;
+  --btn-shadow: #a0a0a0;
+  --highlight: #5865f2;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 34rem;
+  background-color: var(--bg);
+  border-radius: 1.6rem;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--primary);
+  color: var(--accent);
+  padding: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.theme-btn {
+  padding: 0.4rem 1rem;
+  background-color: var(--highlight);
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.theme-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.display {
+  background-color: var(--primary);
+  padding: 0.8rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.display input {
+  width: 100%;
+  font-size: 2.2rem;
+  padding: 0.8rem;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  grid-auto-rows: 4.4rem;
+}
+
+.button-3d {
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  border: none;
+  background: var(--btn-bg);
+  box-shadow: 0 2px 0 var(--btn-shadow), 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.button-3d:hover {
+  background: var(--btn-hover);
+}
+
+.button-3d:active {
+  transform: translateY(1.5px);
+}
+
+/* --- STRETCHED BUTTONS --- */
+.wide-btn {
+  grid-column: span 2;
+}
+
+/* ✅ MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    max-width: 340px;
+    padding: 1rem;
+  }
+
+  .button-3d {
+    font-size: 1.5rem;
+  }
+
+  .display input {
+    font-size: 2rem;
+  }
+
+  .keypad {
+    gap: 0.6rem;
+    grid-auto-rows: 4rem;
+  }
+}
